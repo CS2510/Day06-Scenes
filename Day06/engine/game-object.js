@@ -1,16 +1,23 @@
+/**
+ * @class GameObject representing a game object in the scene
+ */
 class GameObject {
-    //Constructors are just called 'constructor' instead of the name of the class.
+    /**
+     * Set the default values of x and y
+     */
     constructor() {
-        this.x = 0; //All references to member variables must be prefixed with 'this'. Anything without 'this' will be treated as a local variable.
+        this.x = 0; 
         this.y = 0;
     }
-    //javascript does not have return types, so none is needed for member functions
-    update() {//How does the gameObject instance change with every update call?
-        
-    }
-    draw(ctx) {//How does the game object draw itself?
-
-    }
+    /**
+     * Update the game object. Treat this method as if it were abstract.
+     */
+    update() {} //This needs to be overriden in a sub-class or nothing will happen here.
+    /**
+     * Draw the game object. Treat this method as if it were abstract.
+     * @param {2D Context from a Canvas} ctx the contex to which we draw 
+     */
+    draw(ctx) {} //This needs to be overridden in a sub-class or nothing will happen here.
 }
 
 export default GameObject;
